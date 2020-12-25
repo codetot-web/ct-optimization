@@ -1,0 +1,139 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CT Optimization\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-25 07:40+0000\n"
+"PO-Revision-Date: 2020-12-25 07:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: Tiếng Việt\n"
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.0; wp-5.6\n"
+"X-Domain: codetot-optimization"
+
+#: admin/class-codetot-optimization-admin.php:60
+msgid "Advanced Settings"
+msgstr "Cài đặt nâng cao"
+
+#: admin/class-codetot-optimization-admin.php:144
+msgid "CDN Domain"
+msgstr "Tên miền CDN"
+
+#. Author of the plugin
+msgid "CODE TOT JSC"
+msgstr "Công ty Cổ phần CODE TỐT"
+
+#: admin/class-codetot-optimization-admin.php:82
+msgid "Comments"
+msgstr "Bình luận"
+
+#: admin/class-codetot-optimization-admin.php:126
+msgid "Compress HTML"
+msgstr "Nén HTML"
+
+#. Name of the plugin
+#: admin/class-codetot-optimization-admin.php:52
+msgid "CT Optimization"
+msgstr "Code Tốt Optimization"
+
+#: admin/class-codetot-optimization-admin.php:98
+#, php-format
+msgid "Disable %s"
+msgstr "Tắt %s"
+
+#: admin/class-codetot-optimization-admin.php:83
+msgid "Disable Ping"
+msgstr "Tắt Ping"
+
+#: admin/class-codetot-optimization-admin.php:77
+msgid "Emoji"
+msgstr "Emoji"
+
+#: admin/class-codetot-optimization-admin.php:100
+#, php-format
+msgid "Enable %s"
+msgstr "Bật %s"
+
+#: admin/class-codetot-optimization-admin.php:135
+msgid "Enable CDN Domain"
+msgstr "Bật CDN Domain"
+
+#: admin/class-codetot-optimization-admin.php:146
+#, php-format
+msgid "Example: %s"
+msgstr "Ví dụ: %s"
+
+#: admin/class-codetot-optimization-admin.php:84
+msgid "Feed"
+msgstr "Feed"
+
+#: admin/class-codetot-optimization-admin.php:55
+msgid "Global Settings"
+msgstr "Cài đặt cơ bản"
+
+#: admin/class-codetot-optimization-admin.php:76
+msgid "Gutenberg Block Editor"
+msgstr "Gutenberg Block Editor"
+
+#: admin/class-codetot-optimization-admin.php:81
+msgid "Heartbeat"
+msgstr "Heartbeat"
+
+#: admin/class-codetot-optimization-admin.php:104
+#, php-format
+msgid "Hide %s"
+msgstr "Ẩn %s"
+
+#. Author URI of the plugin
+msgid "https://codetot.com"
+msgstr "https://codetot.com"
+
+#. URI of the plugin
+msgid "https://codetot.com/san-pham/ct-optimization"
+msgstr "https://codetot.com/san-pham/ct-optimization"
+
+#: admin/class-codetot-optimization-admin.php:87
+msgid "Inline Comment Style"
+msgstr "Style bình luận trong thẻ HEAD"
+
+#: admin/class-codetot-optimization-admin.php:113
+#: admin/class-codetot-optimization-admin.php:131
+#: admin/class-codetot-optimization-admin.php:140
+msgid "No"
+msgstr "Không"
+
+#: admin/class-codetot-optimization-admin.php:79
+msgid "oEmbed"
+msgstr "oEmbed"
+
+#. Description of the plugin
+msgid ""
+"Provides settings for enable/disable WordPress core features. Should be "
+"install belongs with our CT web builder for high web page speed score."
+msgstr ""
+
+#: admin/class-codetot-optimization-admin.php:85
+msgid "Shortlink"
+msgstr "Shortlink"
+
+#: admin/class-codetot-optimization-admin.php:86
+msgid "WLW Manifest"
+msgstr "WLW Manifest"
+
+#: admin/class-codetot-optimization-admin.php:78
+msgid "WordPress Version"
+msgstr ""
+
+#: admin/class-codetot-optimization-admin.php:80
+msgid "XMLRPC"
+msgstr ""
+
+#: admin/class-codetot-optimization-admin.php:112
+#: admin/class-codetot-optimization-admin.php:130
+#: admin/class-codetot-optimization-admin.php:139
+msgid "Yes"
+msgstr ""
