@@ -302,7 +302,6 @@ class Codetot_Optimization_Process
     }
   }
 
-
   /**
    * Add CDN Support for ACF fields
    * @param string $url
