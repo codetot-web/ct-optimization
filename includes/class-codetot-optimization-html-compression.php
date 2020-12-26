@@ -1,11 +1,18 @@
 <?php
+/**
+ * @link       https://codetot.com
+ * @package    Codetot_Optimization
+ * @subpackage Codetot_Optimization/includes
+ * @since      1.0.1
+ * @author     CODE TOT JSC <dev@codetot.com>
+ */
 
-class Codetot_Optimization_Html_Optimization
+class Codetot_Optimization_Html_Compression
 {
   /**
    * Singleton instance
    *
-   * @var Codetot_Optimization_Html_Optimization
+   * @var Codetot_Optimization_Html_Compression
    */
   private static $instance;
 
