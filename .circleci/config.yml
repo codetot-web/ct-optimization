@@ -21,7 +21,7 @@ jobs:
             git push origin HEAD:production-temp --force
             git reset --hard origin/master
             git merge origin/production-temp --no-ff --no-edit
-            git push origin HEAD:master
+            git push origin HEAD:production
             git push origin :production-temp
 
 workflows:
