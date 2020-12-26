@@ -34,11 +34,28 @@ We just bring some helper functions from our core theme and release it under a s
 
 It depends your choices. Our suggestion is trying with a theme which has no page builder, because we provide a setting to disable Gutenberg. Right now this plugin has been integrated with all our themes as well.
 
+= Should I use it this plugin instead of caching plugin? =
+
+No, if you are using other themes.
+Yes, if you are using our themes.
+
 == Screenshots ==
 
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.0.3 =
+
+* Fix option keys to match
+* Remove option in database if deactivate plugin.
+* Add comment for html compress to easy debug.
+* Translate update for Vietnamese
+* Add more FAQ
+
+= 1.0.2 =
+
+* Fix HTML compress class name.
 
 = 1.0.1 =
 
