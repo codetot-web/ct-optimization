@@ -89,7 +89,7 @@ class Codetot_Optimization_Admin
       'disable_xmlrpc' => __('XMLRPC', 'codetot-optimization'),
       'disable_heartbeat' => __('Heartbeat', 'codetot-optimization'),
       'disable_comments' => __('Comments', 'codetot-optimization'),
-      'disable_ping' => __('Disable Ping', 'codetot-optimization'),
+      'disable_ping' => __('Ping', 'codetot-optimization'),
       'disable_feed' => __('Feed', 'codetot-optimization'),
       'disable_shortlink' => __('Shortlink', 'codetot-optimization'),
       'disable_wlw_manifest' => __('WLW Manifest', 'codetot-optimization'),
