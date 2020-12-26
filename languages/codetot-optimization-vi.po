@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: CT Optimization\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-25 07:40+0000\n"
-"PO-Revision-Date: 2020-12-25 07:43+0000\n"
+"PO-Revision-Date: 2020-12-26 03:46+0000\n"
 "Last-Translator: \n"
-"Language-Team: Tiếng Việt\n"
+"Language-Team: Vietnamese\n"
 "Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
@@ -115,6 +115,9 @@ msgid ""
 "Provides settings for enable/disable WordPress core features. Should be "
 "install belongs with our CT web builder for high web page speed score."
 msgstr ""
+"Cung cấp thiết lập để bật/tắt tính năng lõi của WordPress. Nên cài đặt và sử "
+"dụng cùng với web builder của chúng tôi để đạt điểm tốc độ tối ưu website "
+"cao hơn."
 
 #: admin/class-codetot-optimization-admin.php:85
 msgid "Shortlink"
@@ -126,14 +129,14 @@ msgstr "WLW Manifest"
 
 #: admin/class-codetot-optimization-admin.php:78
 msgid "WordPress Version"
-msgstr ""
+msgstr "Phiên bản WordPress"
 
 #: admin/class-codetot-optimization-admin.php:80
 msgid "XMLRPC"
-msgstr ""
+msgstr "XMLRPC"
 
 #: admin/class-codetot-optimization-admin.php:112
 #: admin/class-codetot-optimization-admin.php:130
 #: admin/class-codetot-optimization-admin.php:139
 msgid "Yes"
-msgstr ""
+msgstr "Có"
