@@ -115,7 +115,7 @@ class Codetot_Optimization_Html_Compression
 
     $savings = round($savings, 2);
 
-    return '<!--HTML compressed, size saved '.$savings.'%. From '.$raw.' bytes, now '.$compressed.' bytes-->';
+    return '<!-- Minified by CodeTot Optimization, size saved '.$savings.'%. From '.$raw.' bytes, now '.$compressed.' bytes-->';
   }
 
   /**
