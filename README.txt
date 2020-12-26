@@ -15,8 +15,10 @@ Provides settings for enable/disable WordPress core features and some tweaks for
 The optimization toolkit for optimizing WordPress sites, from hide, remove some WordPress cores to compress HTML and support CDN domain.
 This is a small plugin with no dependencies, however we official provide support with those plugins:
 
-- Advanced Custom Fields
+- Advanced Custom Fields (Pro Version)
 - Gravity Forms
+- Redis Object Cache
+- reSmush.it Image Optimizer
 
 == Installation ==
 
@@ -28,7 +30,7 @@ This is a small plugin with no dependencies, however we official provide support
 
 = What makes this plugin different from other optimization plugins? =
 
-We just bring some helper functions from our core theme and release it under a single plugin. There is big advantage when using it with your theme, but it should be better.
+We just bring some helper functions from our core theme and release it under a single plugin. There is big advantage when using it with our core theme, but it should be better in most other themes.
 
 = Do I need any specific theme to work with? =
 
@@ -52,6 +54,7 @@ Yes, if you are using our themes.
 * Add comment for html compress to easy debug.
 * Translate update for Vietnamese
 * Add more FAQ
+* Add notice in case PHP version is lower 7.0
 
 = 1.0.2 =
 
