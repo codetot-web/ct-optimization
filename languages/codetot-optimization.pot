@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CT Optimization\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-25 07:40+0000\n"
+"POT-Creation-Date: 2020-12-26 03:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,11 +16,16 @@ msgstr ""
 "X-Loco-Version: 2.5.0; wp-5.6\n"
 "X-Domain: codetot-optimization"
 
-#: admin/class-codetot-optimization-admin.php:60
+#: admin/class-codetot-optimization-admin.php:75
+#, php-format
+msgid "%s: Please consider upgrade your PHP Version to 7.3."
+msgstr ""
+
+#: admin/class-codetot-optimization-admin.php:63
 msgid "Advanced Settings"
 msgstr ""
 
-#: admin/class-codetot-optimization-admin.php:144
+#: admin/class-codetot-optimization-admin.php:154
 msgid "CDN Domain"
 msgstr ""
 
@@ -28,63 +33,67 @@ msgstr ""
 msgid "CODE TOT JSC"
 msgstr ""
 
-#: admin/class-codetot-optimization-admin.php:82
+#. Name of the plugin
+msgid "CodeTot Optimization"
+msgstr ""
+
+#: admin/class-codetot-optimization-admin.php:91
 msgid "Comments"
 msgstr ""
 
-#: admin/class-codetot-optimization-admin.php:126
+#: admin/class-codetot-optimization-admin.php:136
 msgid "Compress HTML"
 msgstr ""
 
-#. Name of the plugin
-#: admin/class-codetot-optimization-admin.php:52
+#: admin/class-codetot-optimization-admin.php:55
+#: admin/class-codetot-optimization-admin.php:75
 msgid "CT Optimization"
 msgstr ""
 
-#: admin/class-codetot-optimization-admin.php:98
+#: admin/class-codetot-optimization-admin.php:108
 #, php-format
 msgid "Disable %s"
 msgstr ""
 
-#: admin/class-codetot-optimization-admin.php:83
+#: admin/class-codetot-optimization-admin.php:92
 msgid "Disable Ping"
 msgstr ""
 
-#: admin/class-codetot-optimization-admin.php:77
+#: admin/class-codetot-optimization-admin.php:86
 msgid "Emoji"
 msgstr ""
 
-#: admin/class-codetot-optimization-admin.php:100
+#: admin/class-codetot-optimization-admin.php:110
 #, php-format
 msgid "Enable %s"
 msgstr ""
 
-#: admin/class-codetot-optimization-admin.php:135
+#: admin/class-codetot-optimization-admin.php:145
 msgid "Enable CDN Domain"
 msgstr ""
 
-#: admin/class-codetot-optimization-admin.php:146
+#: admin/class-codetot-optimization-admin.php:156
 #, php-format
 msgid "Example: %s"
 msgstr ""
 
-#: admin/class-codetot-optimization-admin.php:84
+#: admin/class-codetot-optimization-admin.php:93
 msgid "Feed"
 msgstr ""
 
-#: admin/class-codetot-optimization-admin.php:55
+#: admin/class-codetot-optimization-admin.php:58
 msgid "Global Settings"
 msgstr ""
 
-#: admin/class-codetot-optimization-admin.php:76
+#: admin/class-codetot-optimization-admin.php:85
 msgid "Gutenberg Block Editor"
 msgstr ""
 
-#: admin/class-codetot-optimization-admin.php:81
+#: admin/class-codetot-optimization-admin.php:90
 msgid "Heartbeat"
 msgstr ""
 
-#: admin/class-codetot-optimization-admin.php:104
+#: admin/class-codetot-optimization-admin.php:114
 #, php-format
 msgid "Hide %s"
 msgstr ""
@@ -94,47 +103,47 @@ msgid "https://codetot.com"
 msgstr ""
 
 #. URI of the plugin
-msgid "https://codetot.com/san-pham/ct-optimization"
+msgid "https://codetot.com/codetot-optimization"
 msgstr ""
 
-#: admin/class-codetot-optimization-admin.php:87
+#: admin/class-codetot-optimization-admin.php:96
 msgid "Inline Comment Style"
 msgstr ""
 
-#: admin/class-codetot-optimization-admin.php:113
-#: admin/class-codetot-optimization-admin.php:131
-#: admin/class-codetot-optimization-admin.php:140
+#: admin/class-codetot-optimization-admin.php:123
+#: admin/class-codetot-optimization-admin.php:141
+#: admin/class-codetot-optimization-admin.php:150
 msgid "No"
 msgstr ""
 
-#: admin/class-codetot-optimization-admin.php:79
+#: admin/class-codetot-optimization-admin.php:88
 msgid "oEmbed"
 msgstr ""
 
 #. Description of the plugin
 msgid ""
-"Provides settings for enable/disable WordPress core features. Should be "
-"install belongs with our CT web builder for high web page speed score."
+"Provides settings for enable/disable WordPress core features and some tweaks "
+"for ACF, Gravity Forms, such like Enable CDN, Lazyload assets."
 msgstr ""
 
-#: admin/class-codetot-optimization-admin.php:85
+#: admin/class-codetot-optimization-admin.php:94
 msgid "Shortlink"
 msgstr ""
 
-#: admin/class-codetot-optimization-admin.php:86
+#: admin/class-codetot-optimization-admin.php:95
 msgid "WLW Manifest"
 msgstr ""
 
-#: admin/class-codetot-optimization-admin.php:78
+#: admin/class-codetot-optimization-admin.php:87
 msgid "WordPress Version"
 msgstr ""
 
-#: admin/class-codetot-optimization-admin.php:80
+#: admin/class-codetot-optimization-admin.php:89
 msgid "XMLRPC"
 msgstr ""
 
-#: admin/class-codetot-optimization-admin.php:112
-#: admin/class-codetot-optimization-admin.php:130
-#: admin/class-codetot-optimization-admin.php:139
+#: admin/class-codetot-optimization-admin.php:122
+#: admin/class-codetot-optimization-admin.php:140
+#: admin/class-codetot-optimization-admin.php:149
 msgid "Yes"
 msgstr ""
