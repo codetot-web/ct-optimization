@@ -46,7 +46,7 @@ class Codetot_Optimization_Html_Compression
   /**
    * Get singleton instance.
    *
-   * @return Codetot_Optimization_Html_Optimization
+   * @return Codetot_Optimization_Html_Compression
    */
   public final static function instance()
   {
@@ -58,9 +58,9 @@ class Codetot_Optimization_Html_Compression
 
   public function __construct()
   {
-    $this->options = get_option('ct-optimization');;
+    $this->options = get_option('ct-optimization');
 
-    if (!empty($this->options['enable_compress_page'])) {
+    if (!empty($this->options['compress_html']) && $this->options['compress_html'] === 'yes') {
       add_action('get_header', array($this, 'compress_start'));
     }
   }
