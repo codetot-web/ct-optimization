@@ -47,6 +47,10 @@ Yes, if you are using our themes.
 
 == Changelog ==
 
+= 1.0.4 =
+
+* Fix enable cdn domain option key.
+
 = 1.0.3 =
 
 * Fix option keys to match
