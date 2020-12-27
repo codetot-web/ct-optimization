@@ -27,7 +27,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'CODETOT_OPTIMIZATION_VERSION', '1.0.3' );
+define( 'CODETOT_OPTIMIZATION_VERSION', '1.0.0' );
 define( 'CODETOT_OPTIMIZATION_PATH', plugin_dir_path(__FILE__) );
 define( 'CODETOT_OPTIMIZATION_URL', plugin_dir_url(__FILE__) );
 
