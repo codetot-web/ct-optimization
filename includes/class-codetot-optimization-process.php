@@ -286,7 +286,7 @@ class Codetot_Optimization_Process
   public function check_cdn()
   {
     $this->site_domain = $this->get_domain_from_url();
-    $this->enable_cdn = !empty($this->options['enable_cdn']) ? $this->options['enable_cdn'] : false;
+    $this->enable_cdn = isset($this->options['enable_cdn_domain']) && $this->options['enable_cdn_domain'];
     $this->cdn_domain = !empty($this->options['cdn_domain']) ? $this->options['cdn_domain'] : '';
 
     if (!empty($this->site_domain) && !empty($this->cdn_domain) && $this->site_domain !== $this->cdn_domain && $this->enable_cdn) {
