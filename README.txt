@@ -47,6 +47,11 @@ Yes, if you are using our themes.
 
 == Changelog ==
 
+= 1.0.5 =
+
+* Fix iconv convert character.
+* Update Vietnamese translation.
+
 = 1.0.4 =
 
 * Fix enable cdn domain option key.

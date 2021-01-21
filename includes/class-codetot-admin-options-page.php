@@ -608,27 +608,6 @@ class Codetot_Optimization_Admin_Options_Page
   }
 
   /**
-   * Converts human-readable strings into more machine-friendly formats
-   *
-   * @param string $text String to be formatted
-   * @param string $separator The character that fills in spaces
-   *
-   * @return  string        Formatted text
-   */
-  protected function slugify($text, $separator = '_')
-  {
-    $text = preg_replace('~[^\\pL\d]+~u', $separator, $text);
-    $text = trim($text, $separator);
-    $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
-    $text = strtolower($text);
-    $text = preg_replace('~[^-\w]+~', '', $text);
-    if (empty($text)) {
-      return 'n-a';
-    }
-    return $text;
-  }
-
-  /**
    * Sorts one array using a second as a guide
    *
    * @param array $array Array to be sorted
@@ -705,7 +684,7 @@ class Codetot_Optimization_Admin_Options_Page
 
     // ID
     if (empty($field['id'])) {
-      $field['id'] = $this->slugify($field['title']);
+      $field['id'] = sanitize_title_with_dashes($field['title']);
     }
 
     // Callback
@@ -783,15 +762,15 @@ class Codetot_Optimization_Admin_Options_Page
     return $field;
   }
 
-  /**
-   * Validates the information submitted to the class
-   *
-   * @param string $page_key Array key of the page
-   * @param array $page Array of page parameters
-   * @param string $parent_slug Menu slug of the parent page if there is one
-   *
-   * @return  array          Validated array of page parameters
-   */
+    /**
+     * Validates the information submitted to the class
+     *
+     * @param string $page_key Array key of the page
+     * @param $page_params
+     * @param bool $parent_slug Menu slug of the parent page if there is one
+     *
+     * @return  array          Validated array of page parameters
+     */
   protected function validate_page($page_key, $page_params, $parent_slug = false)
   {
     // Page title
@@ -807,7 +786,7 @@ class Codetot_Optimization_Admin_Options_Page
     // Menu slug
     if (empty($page_params['menu_slug'])) {
       // Basing it off the page title cause it's likely to be more unique than the menu title
-      $page_params['menu_slug'] = $this->slugify($page_params['page_title']);
+      $page_params['menu_slug'] = sanitize_title_with_dashes($page_params['page_title']);
     }
 
     // Menu or submenu item?
@@ -864,7 +843,7 @@ class Codetot_Optimization_Admin_Options_Page
 
     // ID
     if (empty($section['id'])) {
-      $section['id'] = $this->slugify($section['title']);
+      $section['id'] = sanitize_title_with_dashes($section['title']);
     }
 
     // Callback
