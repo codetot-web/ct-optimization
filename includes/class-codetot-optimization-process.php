@@ -57,6 +57,8 @@ class Codetot_Optimization_Process
     }
 
     foreach ($options as $key => $option) {
+      $key = str_replace('-', '_', $key);
+
       if ($option === 'yes') {
         // Convert yes/no to true/false
         $this->options[$key] = true;
