@@ -33,8 +33,10 @@ class Codetot_Optimization {
     $this->plugin_name = 'codetot-optimization';
 
     $this->load_dependencies();
+
+    add_action('plugins_loaded', array($this, 'load_translation'));
+
     Codetot_Optimization_Admin::instance();
-    Codetot_Optimization_i18n::instance();
 
     Codetot_Optimization_Gravity_Forms::instance();
     Codetot_Optimization_Process::instance();
@@ -46,12 +48,19 @@ class Codetot_Optimization {
    * @access   private
    */
   private function load_dependencies() {
-    require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-codetot-optimization-i18n.php';
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-codetot-optimization-process.php';
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-codetot-optimization-gravity-forms.php';
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-codetot-optimization-html-compression.php';
 
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-codetot-optimization-admin.php';
+  }
+
+  public function load_translation() {
+    load_plugin_textdomain(
+      'codetot-optimization',
+      false,
+      CODETOT_OPTIMIZATION_PATH . 'languages/'
+    );
   }
 
   /**
