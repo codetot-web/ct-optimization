@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: CT Optimization\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-25 07:40+0000\n"
-"PO-Revision-Date: 2021-01-21 05:07+0000\n"
+"PO-Revision-Date: 2021-02-10 08:04+0000\n"
 "Last-Translator: \n"
 "Language-Team: Tiếng Việt\n"
 "Language: vi\n"
@@ -15,11 +15,16 @@ msgstr ""
 "X-Loco-Version: 2.5.0; wp-5.6\n"
 "X-Domain: codetot-optimization"
 
-#: admin/class-codetot-optimization-admin.php:60
+#: admin/class-codetot-optimization-admin.php:80
+#, php-format
+msgid "%s: Please consider upgrade your PHP Version to 7.3."
+msgstr "%s: Vui lòng cân nhắc nâng cấp phiên bản PHP lên 7.3."
+
+#: admin/class-codetot-optimization-admin.php:63
 msgid "Advanced Settings"
 msgstr "Cài đặt nâng cao"
 
-#: admin/class-codetot-optimization-admin.php:144
+#: admin/class-codetot-optimization-admin.php:159
 msgid "CDN Domain"
 msgstr "Tên miền CDN"
 
@@ -27,116 +32,135 @@ msgstr "Tên miền CDN"
 msgid "CODE TOT JSC"
 msgstr "Công ty Cổ phần CODE TỐT"
 
-#: admin/class-codetot-optimization-admin.php:82
+#: admin/class-codetot-optimization-admin.php:96
 msgid "Comments"
 msgstr "Bình luận"
 
-#: admin/class-codetot-optimization-admin.php:126
+#: admin/class-codetot-optimization-admin.php:141
 msgid "Compress HTML"
 msgstr "Nén HTML"
 
 #. Name of the plugin
-#: admin/class-codetot-optimization-admin.php:52
+#: admin/class-codetot-optimization-admin.php:55
+#: admin/class-codetot-optimization-admin.php:80
 msgid "CT Optimization"
 msgstr "Code Tốt - Tối ưu hóa"
 
-#: admin/class-codetot-optimization-admin.php:98
+#: admin/class-codetot-optimization-admin.php:113
 #, php-format
 msgid "Disable %s"
 msgstr "Tắt %s"
 
-#: admin/class-codetot-optimization-admin.php:83
-msgid "Disable Ping"
-msgstr "Tắt Ping"
+#: admin/class-codetot-optimization-admin.php:169
+msgid "Disable Gravity Forms Default Styles"
+msgstr "Tắt giao diện Gravity Forms mặc định"
 
-#: admin/class-codetot-optimization-admin.php:77
+#: admin/class-codetot-optimization-admin.php:91
 msgid "Emoji"
 msgstr "Emoji"
 
-#: admin/class-codetot-optimization-admin.php:100
+#: admin/class-codetot-optimization-admin.php:115
 #, php-format
 msgid "Enable %s"
 msgstr "Bật %s"
 
-#: admin/class-codetot-optimization-admin.php:135
+#: admin/class-codetot-optimization-admin.php:150
 msgid "Enable CDN Domain"
 msgstr "Bật CDN Domain"
 
-#: admin/class-codetot-optimization-admin.php:146
+#: admin/class-codetot-optimization-admin.php:161
 #, php-format
 msgid "Example: %s"
 msgstr "Ví dụ: %s"
 
-#: admin/class-codetot-optimization-admin.php:84
+#: admin/class-codetot-optimization-admin.php:98
 msgid "Feed"
 msgstr "Feed"
 
-#: admin/class-codetot-optimization-admin.php:55
+#: admin/class-codetot-optimization-admin.php:58
 msgid "Global Settings"
 msgstr "Cài đặt cơ bản"
 
-#: admin/class-codetot-optimization-admin.php:76
+#: admin/class-codetot-optimization-admin.php:90
 msgid "Gutenberg Block Editor"
 msgstr "Gutenberg Block Editor"
 
-#: admin/class-codetot-optimization-admin.php:81
+#: admin/class-codetot-optimization-admin.php:95
 msgid "Heartbeat"
 msgstr "Heartbeat"
 
-#: admin/class-codetot-optimization-admin.php:104
+#: admin/class-codetot-optimization-admin.php:119
 #, php-format
 msgid "Hide %s"
 msgstr "Ẩn %s"
 
+#: admin/class-codetot-optimization-admin.php:178
+msgid "Hide Gravity Forms Menus"
+msgstr "Ẩn menu Gravity Forms"
+
+#. URI of the plugin
 #. Author URI of the plugin
 msgid "https://codetot.com"
 msgstr "https://codetot.com"
 
-#. URI of the plugin
-msgid "https://codetot.com/san-pham/ct-optimization"
-msgstr "https://codetot.com/san-pham/ct-optimization"
-
-#: admin/class-codetot-optimization-admin.php:87
+#: admin/class-codetot-optimization-admin.php:101
 msgid "Inline Comment Style"
 msgstr "Style bình luận trong thẻ HEAD"
 
-#: admin/class-codetot-optimization-admin.php:113
-#: admin/class-codetot-optimization-admin.php:131
-#: admin/class-codetot-optimization-admin.php:140
+#: admin/class-codetot-optimization-admin.php:187
+msgid "Load Gravity Forms in Footer"
+msgstr "Tải script Gravity Form ở cuối trang"
+
+#: admin/class-codetot-optimization-admin.php:128
+#: admin/class-codetot-optimization-admin.php:146
+#: admin/class-codetot-optimization-admin.php:155
+#: admin/class-codetot-optimization-admin.php:174
+#: admin/class-codetot-optimization-admin.php:183
+#: admin/class-codetot-optimization-admin.php:192
 msgid "No"
 msgstr "Không"
 
-#: admin/class-codetot-optimization-admin.php:79
+#: admin/class-codetot-optimization-admin.php:93
 msgid "oEmbed"
 msgstr "oEmbed"
 
+#: admin/class-codetot-optimization-admin.php:97
+msgid "Ping"
+msgstr "Ping"
+
+#: admin/class-codetot-optimization-admin.php:68
+msgid "Plugin Settings"
+msgstr "Cài đặt của plugin"
+
 #. Description of the plugin
 msgid ""
-"Provides settings for enable/disable WordPress core features. Should be "
-"install belongs with our CT web builder for high web page speed score."
+"Provides settings for enable/disable WordPress core features and some tweaks "
+"for ACF, Gravity Forms, such like Enable CDN, Lazyload assets."
 msgstr ""
-"Cung cấp thiết lập để bật/tắt tính năng lõi của WordPress. Nên cài đặt và sử "
-"dụng cùng với web builder của chúng tôi để đạt điểm tốc độ tối ưu website "
-"cao hơn."
+"Cung cấp thiết lập để tắt/bật chức năng lõi WordPress và tối ưu hóa cho "
+"plugin ACF, Gravity Forms như bật CDN, load lazy."
 
-#: admin/class-codetot-optimization-admin.php:85
+#: admin/class-codetot-optimization-admin.php:99
 msgid "Shortlink"
 msgstr "Shortlink"
 
-#: admin/class-codetot-optimization-admin.php:86
+#: admin/class-codetot-optimization-admin.php:100
 msgid "WLW Manifest"
 msgstr "WLW Manifest"
 
-#: admin/class-codetot-optimization-admin.php:78
+#: admin/class-codetot-optimization-admin.php:92
 msgid "WordPress Version"
 msgstr "Phiên bản WordPress"
 
-#: admin/class-codetot-optimization-admin.php:80
+#: admin/class-codetot-optimization-admin.php:94
 msgid "XMLRPC"
 msgstr "XMLRPC"
 
-#: admin/class-codetot-optimization-admin.php:112
-#: admin/class-codetot-optimization-admin.php:130
-#: admin/class-codetot-optimization-admin.php:139
+#: admin/class-codetot-optimization-admin.php:127
+#: admin/class-codetot-optimization-admin.php:145
+#: admin/class-codetot-optimization-admin.php:154
+#: admin/class-codetot-optimization-admin.php:173
+#: admin/class-codetot-optimization-admin.php:182
+#: admin/class-codetot-optimization-admin.php:191
 msgid "Yes"
 msgstr "Có"

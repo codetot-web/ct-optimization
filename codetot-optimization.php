@@ -5,10 +5,10 @@
  * @package           Codetot_Optimization
  *
  * @wordpress-plugin
- * Plugin Name:       CodeTot Optimization
- * Plugin URI:        https://codetot.com/codetot-optimization
+ * Plugin Name:       CT Optimization
+ * Plugin URI:        https://codetot.com
  * Description:       Provides settings for enable/disable WordPress core features and some tweaks for ACF, Gravity Forms, such like Enable CDN, Lazyload assets.
- * Version:           1.0.7
+ * Version:           1.0.8
  * Author:            CODE TOT JSC
  * Author URI:        https://codetot.com
  * License:           GPL-2.0+
@@ -22,7 +22,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'CODETOT_OPTIMIZATION_VERSION', '1.0.7' );
+define( 'CODETOT_OPTIMIZATION_VERSION', '1.0.8' );
 define( 'CODETOT_OPTIMIZATION_PATH', plugin_dir_path(__FILE__) );
 define( 'CODETOT_OPTIMIZATION_URL', plugin_dir_url(__FILE__) );
 
