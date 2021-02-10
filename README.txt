@@ -47,6 +47,10 @@ Yes, if you are using our themes.
 
 == Changelog ==
 
+= 1.0.8 =
+
+* Update plugin translation.
+
 = 1.0.7 =
 
 * Add Gravity Form tweak settings, including disable default styles, hide some menus and load Gravity forms script in footer.
