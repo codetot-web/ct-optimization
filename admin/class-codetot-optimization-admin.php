@@ -63,7 +63,12 @@ class Codetot_Optimization_Admin
             'title' => __('Advanced Settings', 'codetot-optimization'),
             'text' => '',
             'fields' => $this->get_advanced_options()
-          )
+          ),
+          'plugins' => array(
+            'title' => __('Plugin Settings', 'codetot-optimization'),
+            'text' => '',
+            'fields' => $this->get_plugin_options()
+          ),
         )
       )
     );
@@ -154,6 +159,38 @@ class Codetot_Optimization_Admin
         'title' => __('CDN Domain', 'codetot-optimization'),
         'type' => 'text',
         'placeholder' => sprintf(__('Example: %s', 'codetot-optimization'), 'cdn.example.com')
+      )
+    );
+  }
+
+  public function get_plugin_options() {
+    return array(
+      'disable_gravity_forms_style' => array(
+        'title' => __('Disable Gravity Forms Default Styles', 'codetot-optimization'),
+        'type' => 'radio',
+        'value' => 'no',
+        'choices' => array(
+          'yes' => __('Yes', 'codetot-optimization'),
+          'no' => __('No', 'codetot-optimization')
+        )
+      ),
+      'hide_gravity_forms_menus' => array(
+        'title' => __('Hide Gravity Forms Menus', 'codetot-optimization'),
+        'type' => 'radio',
+        'value' => 'no',
+        'choices' => array(
+          'yes' => __('Yes', 'codetot-optimization'),
+          'no' => __('No', 'codetot-optimization')
+        )
+      ),
+      'load_gravity_forms_footer' => array(
+        'title' => __('Load Gravity Forms in Footer', 'codetot-optimization'),
+        'type' => 'radio',
+        'value' => 'no',
+        'choices' => array(
+          'yes' => __('Yes', 'codetot-optimization'),
+          'no' => __('No', 'codetot-optimization')
+        )
       )
     );
   }

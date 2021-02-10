@@ -35,6 +35,8 @@ class Codetot_Optimization {
     $this->load_dependencies();
     Codetot_Optimization_Admin::instance();
     Codetot_Optimization_i18n::instance();
+
+    Codetot_Optimization_Gravity_Forms::instance();
     Codetot_Optimization_Process::instance();
     Codetot_Optimization_Html_Compression::instance();
   }
@@ -46,6 +48,7 @@ class Codetot_Optimization {
   private function load_dependencies() {
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-codetot-optimization-i18n.php';
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-codetot-optimization-process.php';
+    require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-codetot-optimization-gravity-forms.php';
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-codetot-optimization-html-compression.php';
 
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-codetot-optimization-admin.php';
