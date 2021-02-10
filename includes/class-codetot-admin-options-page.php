@@ -141,6 +141,8 @@ class Codetot_Optimization_Admin_Options_Page
       default:
         $this->submit_notice($method);
     }
+
+    return array();
   }
 
   /**
@@ -535,7 +537,7 @@ class Codetot_Optimization_Admin_Options_Page
    * Builds the settings sections
    *
    * @param string $page_key The array key of the page
-   * @param type $section_key The array key of the section
+   * @param string $section_key The array key of the section
    */
   protected function build_settings_section($page_key, $section_key)
   {
@@ -573,6 +575,7 @@ class Codetot_Optimization_Admin_Options_Page
    *
    * @param string $page_key The array key of the page
    *
+   * @param $input
    * @return  array        The sanitized post input
    */
   protected function sanitize_setting($page_key, $input)
@@ -671,7 +674,7 @@ class Codetot_Optimization_Admin_Options_Page
    * @param string $section_key Array key of the associated section
    * @param string $field_key Array key of the field
    * @param string $page ID of the associated page
-   * @param type $section ID of the associated section
+   * @param string $section ID of the associated section
    *
    * @return  array          The validated field array
    */
