@@ -191,6 +191,15 @@ class Codetot_Optimization_Admin
           'yes' => __('Yes', 'codetot-optimization'),
           'no' => __('No', 'codetot-optimization')
         )
+      ),
+      'load_lazysizes_scripts' => array(
+        'title' => __('Load Lazysizes scripts', 'codetot-optimization'),
+        'type' => 'radio',
+        'value' => 'no',
+        'choices' => array(
+          'yes' => __('Yes', 'codetot-optimization'),
+          'no' => __('No', 'codetot-optimization')
+        )
       )
     );
   }
