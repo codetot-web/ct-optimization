@@ -3,7 +3,7 @@ Contributors: khoipro, codetot
 Donate link: https://codetot.com
 Tags: optimization, compress, settings
 Requires at least: 5.4
-Tested up to: 5.6.1
+Tested up to: 5.7
 Stable tag: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -16,9 +16,13 @@ The optimization toolkit for optimizing WordPress sites, from hide, remove some 
 This is a small plugin with no dependencies, however we official provide support with those plugins:
 
 - Advanced Custom Fields (Pro Version)
-- Gravity Forms
+- Gravity Forms (Tweak bundle to lazyload in footer)
 - Redis Object Cache
 - reSmush.it Image Optimizer
+
+You can enable/disable load below external scripts:
+
+- [lazysizes.min.js](https://github.com/aFarkas/lazysizes)
 
 == Installation ==
 
@@ -46,6 +50,10 @@ Yes, if you are using our themes.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.0.9 =
+
+* Add option to enable/disable lazysizes script.
 
 = 1.0.8 =
 

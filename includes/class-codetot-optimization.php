@@ -49,6 +49,7 @@ class Codetot_Optimization {
    */
   private function load_dependencies() {
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-codetot-optimization-process.php';
+    require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-codetot-optimization-assets.php';
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-codetot-optimization-gravity-forms.php';
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-codetot-optimization-html-compression.php';
 
