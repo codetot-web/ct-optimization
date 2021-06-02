@@ -91,12 +91,14 @@ class Codetot_Optimization_Process
   {
     if (!empty($this->options['disable_gutenberg_block_editor'])) {
       add_action('use_block_editor_for_post', '__return_false');
-      add_action('wp_enqueue_scripts', function () {
-        wp_dequeue_style('wp-block-library');
-        wp_dequeue_style('wp-block-library-theme');
-        wp_dequeue_style('wc-block-style');
-      }, 100);
+      add_action('wp_enqueue_scripts', array($this, 'disable_wp_block_assets'), 100);
     }
+  }
+
+  public function disable_wp_block_assets() {
+    wp_dequeue_style('wp-block-library');
+    wp_dequeue_style('wp-block-library-theme');
+    wp_dequeue_style('wc-block-style');
   }
 
   public function check_emoji()
