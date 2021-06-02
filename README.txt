@@ -51,6 +51,10 @@ Yes, if you are using our themes.
 
 == Changelog ==
 
+= 1.0.10 =
+
+* Fix warning PHP when calling function inline
+
 = 1.0.9 =
 
 * Add option to enable/disable lazysizes script.
