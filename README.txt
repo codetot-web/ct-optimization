@@ -2,9 +2,9 @@
 Contributors: khoipro, codetot
 Donate link: https://codetot.com
 Tags: optimization, compress, settings
-Requires at least: 5.4
-Tested up to: 5.7
-Stable tag: 5.4
+Requires at least: 5.0
+Tested up to: 5.8
+Stable tag: 1.0.12
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,16 +13,36 @@ Provides settings for enable/disable WordPress core features and some tweaks for
 == Description ==
 
 The optimization toolkit for optimizing WordPress sites, from hide, remove some WordPress cores to compress HTML and support CDN domain.
-This is a small plugin with no dependencies, however we official provide support with those plugins:
 
-- Advanced Custom Fields (Pro Version)
-- Gravity Forms (Tweak bundle to lazyload in footer)
-- Redis Object Cache
-- reSmush.it Image Optimizer
+Main Features:
 
-You can enable/disable load below external scripts:
+Disable some core WordPress features:
 
-- [lazysizes.min.js](https://github.com/aFarkas/lazysizes)
+1. Disable Gutenberg Block Editor
+2. Disable Gutenberg widgets
+3. Disable Emoji
+4. Hide WordPress version
+5. Disable oEmbed
+6. Disable XMLRPC
+7. Disable Heartbeat
+8. Disable Comments
+9. Disable Ping
+10. Disable Feed
+11. Disable Shortlink
+12. Disable WLW Manifest
+13. Disable Inline Comment styles
+
+Advanced Settings:
+
+1. Compress HTML
+2. Enable CDN Domain (works with ACF fields)
+
+Extra Plugin Settings:
+
+1. Disable Gravity Forms Default Styles
+2. Hide Gravity Forms Menus
+3. Load Gravity Forms in Footer
+4. Load [Lazysizes](https://github.com/aFarkas/lazysizes) scripts
 
 == Installation ==
 
