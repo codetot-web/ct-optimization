@@ -71,6 +71,7 @@ class Codetot_Optimization_Process
 
     // Global Settings
     add_action('init', array($this, 'check_gutenberg'));
+    add_action('init', array($this, 'check_gutenberg_widget'));
     add_action('init', array($this, 'check_emoji'));
     add_action('init', array($this, 'check_generator_tag'));
     add_action('init', array($this, 'check_oembed'));
@@ -138,6 +139,13 @@ class Codetot_Optimization_Process
       remove_filter( 'admin_url', 'gutenberg_modify_add_new_button_url' ); // old
       remove_action( 'admin_enqueue_scripts', 'gutenberg_check_if_classic_needs_warning_about_blocks' );
       remove_filter( 'register_post_type_args', 'gutenberg_filter_post_type_labels' );
+    }
+  }
+
+  public function check_gutenberg_widget() {
+    if (!empty($this->options['disable_gutenberg_widgets'])) {
+      add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
+      add_filter( 'use_widgets_block_editor', '__return_false' );
     }
   }
 

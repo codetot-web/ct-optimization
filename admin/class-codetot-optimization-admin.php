@@ -88,6 +88,7 @@ class Codetot_Optimization_Admin
   {
     return [
       'disable_gutenberg_block_editor' => __('Gutenberg Block Editor', 'codetot-optimization'),
+      'disable_gutenberg_widgets' => __('Gutenberg Widgets', 'codetot-optimization'),
       'disable_emoji' => __('Emoji', 'codetot-optimization'),
       'hide_wordpress_version' => __('WordPress Version', 'codetot-optimization'),
       'disable_oembed' => __('oEmbed', 'codetot-optimization'),
