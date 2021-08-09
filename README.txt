@@ -71,6 +71,14 @@ Yes, if you are using our themes.
 
 == Changelog ==
 
+= 1.0.12 = 
+
+* Add option to disable Gutenberg widget admin UI.
+
+= 1.0.11 =
+
+* Disable more Gutenberg feature.
+
 = 1.0.10 =
 
 * Fix warning PHP when calling function inline
