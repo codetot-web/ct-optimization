@@ -1,10 +1,10 @@
-=== CodeTot Optimization ===
+=== CT Optimization ===
 Contributors: khoipro, codetot
 Donate link: https://codetot.com
-Tags: optimization, compress, settings
+Tags: optimization, compress, settings, codetot
 Requires at least: 5.0
 Tested up to: 5.8
-Stable tag: 1.0.12
+Stable tag: 1.0.13
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,7 +19,7 @@ Main Features:
 Disable some core WordPress features:
 
 1. Disable Gutenberg Block Editor
-2. Disable Gutenberg widgets
+2. Disable Gutenberg Widgets
 3. Disable Emoji
 4. Hide WordPress version
 5. Disable oEmbed
@@ -34,8 +34,7 @@ Disable some core WordPress features:
 
 Advanced Settings:
 
-1. Compress HTML
-2. Enable CDN Domain (works with ACF fields)
+1. Enable CDN Domain (works with ACF fields)
 
 Extra Plugin Settings:
 
@@ -43,6 +42,9 @@ Extra Plugin Settings:
 2. Hide Gravity Forms Menus
 3. Load Gravity Forms in Footer
 4. Load [Lazysizes](https://github.com/aFarkas/lazysizes) scripts
+
+To see more free plugins, visit our [GitHub](https://github.com/codetot-web).
+If you need extra support, please use a contact form at [our website](https://codetot.com).
 
 == Installation ==
 
@@ -56,9 +58,9 @@ Extra Plugin Settings:
 
 We just bring some helper functions from our core theme and release it under a single plugin. There is big advantage when using it with our core theme, but it should be better in most other themes.
 
-= Do I need any specific theme to work with? =
+= Should it work with my current theme? =
 
-It depends your choices. Our suggestion is trying with a theme which has no page builder, because we provide a setting to disable Gutenberg. Right now this plugin has been integrated with all our themes as well.
+Certainly. We just use filters/actions hooks.
 
 = Should I use it this plugin instead of caching plugin? =
 
@@ -71,7 +73,12 @@ Yes, if you are using our themes.
 
 == Changelog ==
 
-= 1.0.12 = 
+= 1.0.13 =
+
+* Disable more Gravity form assets.
+* Remove HTML Compress feature.
+
+= 1.0.12 =
 
 * Add option to disable Gutenberg widget admin UI.
 

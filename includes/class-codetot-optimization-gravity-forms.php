@@ -17,11 +17,6 @@ class Codetot_Optimization_Gravity_Forms
   private static $instance;
 
   /**
-   * @var array
-   */
-  private $options;
-
-  /**
    * Get singleton instance.
    *
    * @return Codetot_Optimization_Gravity_Forms
@@ -63,6 +58,9 @@ class Codetot_Optimization_Gravity_Forms
     wp_dequeue_style( 'gforms_formsmain_css' );
     wp_dequeue_style( 'gforms_ready_class_css' );
     wp_dequeue_style( 'gforms_browsers_css' );
+    wp_dequeue_style( 'gform_basic' );
+    wp_dequeue_style( 'gform_theme' );
+    wp_dequeue_style( 'gform_theme_ie11' );
   }
 
   public function remove_pages()
