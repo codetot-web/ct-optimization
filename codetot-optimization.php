@@ -8,7 +8,7 @@
  * Plugin Name:       CT Optimization
  * Plugin URI:        https://codetot.com
  * Description:       Provides settings for enable/disable WordPress core features and some tweaks for ACF, Gravity Forms, such like Enable CDN, Lazyload assets.
- * Version:           1.0.14
+ * Version:           1.0.15
  * Author:            CODE TOT JSC
  * Author URI:        https://codetot.com
  * License:           GPL-2.0+
@@ -22,7 +22,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'CODETOT_OPTIMIZATION_VERSION', '1.0.14' );
+define( 'CODETOT_OPTIMIZATION_VERSION', '1.0.15' );
 define( 'CODETOT_OPTIMIZATION_PATH', plugin_dir_path(__FILE__) );
 define( 'CODETOT_OPTIMIZATION_URL', plugin_dir_url(__FILE__) );
 
@@ -31,7 +31,7 @@ define( 'CODETOT_OPTIMIZATION_URL', plugin_dir_url(__FILE__) );
  * This action is documented in includes/class-codetot-optimization-activator.php
  */
 function activate_codetot_optimization() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-codetot-optimization-activator.php';
+	require_once CODETOT_OPTIMIZATION_PATH . 'includes/class-codetot-optimization-activator.php';
 	Codetot_Optimization_Activator::activate();
 }
 
@@ -40,7 +40,7 @@ function activate_codetot_optimization() {
  * This action is documented in includes/class-codetot-optimization-deactivator.php
  */
 function deactivate_codetot_optimization() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-codetot-optimization-deactivator.php';
+	require_once CODETOT_OPTIMIZATION_PATH . 'includes/class-codetot-optimization-deactivator.php';
 	Codetot_Optimization_Deactivator::deactivate();
 }
 
@@ -51,7 +51,7 @@ register_deactivation_hook( __FILE__, 'deactivate_codetot_optimization' );
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-codetot-optimization.php';
+require CODETOT_OPTIMIZATION_PATH . 'includes/class-codetot-optimization.php';
 
 /**
  * Begins execution of the plugin.

@@ -138,15 +138,6 @@ class Codetot_Optimization_Admin
   public function get_advanced_options()
   {
     return array(
-      'enable_compress_html' => array(
-        'title' => __('Compress HTML', 'codetot-optimization'),
-        'type' => 'radio',
-        'value' => 'no',
-        'choices' => array(
-          'yes' => __('Yes', 'codetot-optimization'),
-          'no' => __('No', 'codetot-optimization')
-        )
-      ),
       'enable_cdn_domain' => array(
         'title' => __('Enable CDN Domain', 'codetot-optimization'),
         'type' => 'radio',
