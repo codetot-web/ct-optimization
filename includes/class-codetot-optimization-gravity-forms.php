@@ -37,15 +37,28 @@ class Codetot_Optimization_Gravity_Forms
       return;
     }
 
-    if (!empty($options['disable-gravity-forms-default-styles'])) {
+    foreach ( $options as $key => $option ) {
+      $key = str_replace('-', '_', $key);
+
+      if ( $option === 'yes' ) {
+        // Convert yes/no to true/false
+        $this->options[$key] = true;
+      } elseif( $option === 'no' ) {
+        $this->options[$key] = false;
+      } else {
+        $this->options[$key] = $option;
+      }
+    }
+
+    if ( ! empty( $this->options['disable-gravity-forms-default-styles'] ) ) {
       add_action('gform_enqueue_scripts', array($this, 'disable_gravity_forms_styles'));
     }
 
-    if (!empty($options['hide-gravity-forms-menus'])) {
+    if ( !empty( $this->options['hide-gravity-forms-menus'] ) ) {
       add_action('admin_menu', array($this, 'remove_pages'), 999);
     }
 
-    if (!empty($options['load-gravity-forms-in-footer'])) {
+    if ( ! empty( $this->options['load-gravity-forms-in-footer'] ) ) {
       add_filter('gform_init_scripts_footer', '__return_true');
       add_filter('gform_cdata_open', array($this, 'wrap_gform_cdata_open'), 1);
       add_filter('gform_cdata_close', array($this, 'wrap_gform_cdata_close'), 99);

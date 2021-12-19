@@ -52,20 +52,20 @@ class Codetot_Optimization_Admin
 
     $this->pages = array(
       'ct-optimization' => array(
-        'page_title' => __('CT Optimization', 'codetot-optimization'),
+        'page_title' => esc_html__('CT Optimization', 'codetot-optimization'),
         'sections' => array(
           'global' => array(
-            'title' => __('Global Settings', 'codetot-optimization'),
+            'title' => esc_html__('Global Settings', 'codetot-optimization'),
             'text' => '',
             'fields' => $this->generate_global_options()
           ),
           'advanced' => array(
-            'title' => __('Advanced Settings', 'codetot-optimization'),
+            'title' => esc_html__('Advanced Settings', 'codetot-optimization'),
             'text' => '',
             'fields' => $this->get_advanced_options()
           ),
           'plugins' => array(
-            'title' => __('Plugin Settings', 'codetot-optimization'),
+            'title' => esc_html__('Plugin Settings', 'codetot-optimization'),
             'text' => '',
             'fields' => $this->get_plugin_options()
           ),
