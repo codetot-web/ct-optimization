@@ -4,7 +4,7 @@ Donate link: https://codetot.com
 Tags: optimization, compress, settings, codetot
 Requires at least: 5.0
 Tested up to: 5.8
-Stable tag: 1.0.13
+Stable tag: 1.0.14
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -72,6 +72,10 @@ Yes, if you are using our themes.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.0.14 =
+
+* Fix load Gravity form assets if disable option.
 
 = 1.0.13 =
 

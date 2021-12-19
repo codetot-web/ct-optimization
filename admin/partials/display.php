@@ -14,7 +14,7 @@
 $this->ct_optimization_options = get_option( 'ct_optimization_option_name' ); ?>
 
 <div class="wrap">
-    <h2>CT Optimization</h2>
+    <h2><?php esc_html_e('CT Optimization', 'ct-optimization'); ?></h2>
     <?php settings_errors(); ?>
     <form method="post" action="options.php">
         <?php
