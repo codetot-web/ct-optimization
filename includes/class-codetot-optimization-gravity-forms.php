@@ -50,15 +50,15 @@ class Codetot_Optimization_Gravity_Forms
       }
     }
 
-    if ( ! empty( $this->options['disable-gravity-forms-default-styles'] ) ) {
+    if ( ! empty( $this->options['disable_gravity_forms_default_styles'] ) ) {
       add_action('gform_enqueue_scripts', array($this, 'disable_gravity_forms_styles'));
     }
 
-    if ( !empty( $this->options['hide-gravity-forms-menus'] ) ) {
+    if ( !empty( $this->options['hide_gravity_forms_menus'] ) ) {
       add_action('admin_menu', array($this, 'remove_pages'), 999);
     }
 
-    if ( ! empty( $this->options['load-gravity-forms-in-footer'] ) ) {
+    if ( ! empty( $this->options['load_gravity_forms_in_footer'] ) ) {
       add_filter('gform_init_scripts_footer', '__return_true');
       add_filter('gform_cdata_open', array($this, 'wrap_gform_cdata_open'), 1);
       add_filter('gform_cdata_close', array($this, 'wrap_gform_cdata_close'), 99);
