@@ -32,6 +32,10 @@ Disable some core WordPress features:
 12. Disable WLW Manifest
 13. Disable Inline Comment styles
 
+Assets Optimization:
+
+1. Remove Global Styles (Duotone and Extra CSS Style from WP 5.9)
+
 Advanced Settings:
 
 1. Enable CDN Domain (works with ACF fields)
@@ -72,6 +76,10 @@ Yes, if you are using our themes.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.0.16 =
+
+* Add option to remove duotone and extra CSS style in WP 5.9
 
 = 1.0.15 =
 
