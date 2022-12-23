@@ -84,6 +84,9 @@ class Codetot_Optimization_Process
     add_action('init', array($this, 'check_manifest'));
     add_action('init', array($this, 'check_comment_style'));
 
+    // Assets Optimization
+    add_action('after_setup_theme', array($this, 'check_global_styles'));
+
     // Advanced Settings
     add_action('init', array($this, 'check_cdn'));
   }
@@ -338,6 +341,16 @@ class Codetot_Optimization_Process
         global $wp_widget_factory;
         remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
       });
+    }
+  }
+
+  public function check_global_styles()
+  {
+    if (!empty($this->options['disable_global_styles'])) {
+      remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
+      remove_action('wp_footer', 'wp_enqueue_global_styles', 1);
+      remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
+      remove_action('in_admin_header', 'wp_global_styles_render_svg_filters');
     }
   }
 

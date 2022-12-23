@@ -59,6 +59,11 @@ class Codetot_Optimization_Admin
             'text' => '',
             'fields' => $this->generate_global_options()
           ),
+          'assets_optimization' => array(
+            'title' => esc_html__('Assets Optimization', 'codetot-optimization'),
+            'text' => '',
+            'fields' => $this->generate_assets_optimization_options()
+          ),
           'advanced' => array(
             'title' => esc_html__('Advanced Settings', 'codetot-optimization'),
             'text' => '',
@@ -151,6 +156,20 @@ class Codetot_Optimization_Admin
         'title' => __('CDN Domain', 'codetot-optimization'),
         'type' => 'text',
         'placeholder' => sprintf(__('Example: %s', 'codetot-optimization'), 'cdn.example.com')
+      )
+    );
+  }
+
+  public function generate_assets_optimization_options() {
+    return array(
+      'disable_global_styles' => array(
+        'title' => __('Disable Global Styles', 'codetot-optimization'),
+        'type' => 'radio',
+        'value' => 'no',
+        'choices' => array(
+          'yes' => __('Yes', 'codetot-optimization'),
+          'no' => __('No', 'codetot-optimization')
+        )
       )
     );
   }

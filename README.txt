@@ -3,8 +3,8 @@ Contributors: khoipro, codetot
 Donate link: https://codetot.com
 Tags: optimization, compress, settings, codetot
 Requires at least: 5.0
-Tested up to: 5.8
-Stable tag: 1.0.15
+Tested up to: 6.1
+Stable tag: 1.0.16
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,10 @@ Disable some core WordPress features:
 11. Disable Shortlink
 12. Disable WLW Manifest
 13. Disable Inline Comment styles
+
+Assets Optimization:
+
+1. Remove Global Styles (Duotone and Extra CSS Style from WP 5.9)
 
 Advanced Settings:
 
@@ -72,6 +76,10 @@ Yes, if you are using our themes.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.0.16 =
+
+* Add option to remove duotone and extra CSS style in WP 5.9
 
 = 1.0.15 =
 
