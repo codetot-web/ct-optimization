@@ -3,8 +3,8 @@ Contributors: khoipro, codetot
 Donate link: https://codetot.com
 Tags: optimization, compress, settings, codetot
 Requires at least: 5.0
-Tested up to: 6.1
-Stable tag: 1.0.16
+Tested up to: 6.6
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,9 @@ Yes, if you are using our themes.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.1.0 =
+* Fix compatible with PHP 8
 
 = 1.0.16 =
 
