@@ -4,7 +4,7 @@ Donate link: https://codetot.com
 Tags: optimization, compress, settings, codetot
 Requires at least: 5.0
 Tested up to: 6.6
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,11 @@ Yes, if you are using our themes.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.1.1 =
+* Fix PHP 8.1+ deprecation warnings for null/false passed to strip_tags() and strtotime()
+* Fix parse_url() return value not checked in get_domain_from_url()
+* Fix widget existence check in check_comment_style() for PHP 8.x
 
 = 1.1.0 =
 * Fix compatible with PHP 8

@@ -395,7 +395,7 @@ class Codetot_Optimization_Admin_Options_Page
 
     // Sanitize field values, unless 'sanitize' was set to false for this field.
     if ((!isset($field['sanitize']) || $field['sanitize']) && $field['type'] !== 'wp_editor') {
-      $field['value'] = strip_tags($field['value']);    // Removes HTML tags
+      $field['value'] = strip_tags((string) $field['value']);    // Removes HTML tags
       $field['value'] = esc_attr($field['value']);    // Escapes field for HTML attributes
     }
 
@@ -732,27 +732,27 @@ class Codetot_Optimization_Admin_Options_Page
       case 'range':
         break;
       case 'date':
-        $field['value'] = date('Y-m-d', strtotime($field['value']));
+        $field['value'] = !empty($field['value']) ? date('Y-m-d', strtotime($field['value'])) : '';
         $field = wp_parse_args($field, $this->fields['text']);
         break;
       case 'datetime':
       case 'datetime-local':
-        $field['value'] = date('Y-m-d\TH:i:s', strtotime($field['value']));
+        $field['value'] = !empty($field['value']) ? date('Y-m-d\TH:i:s', strtotime($field['value'])) : '';
         $field = wp_parse_args($field, $this->fields['text']);
         break;
       case 'month':
-        $field['value'] = date('Y-m', strtotime($field['value']));
+        $field['value'] = !empty($field['value']) ? date('Y-m', strtotime($field['value'])) : '';
         $field = wp_parse_args($field, $this->fields['text']);
         break;
       case 'textarea':
         $field = wp_parse_args($field, $this->fields[$field['type']]);
         break;
       case 'time':
-        $field['value'] = date('H:i:s', strtotime($field['value']));
+        $field['value'] = !empty($field['value']) ? date('H:i:s', strtotime($field['value'])) : '';
         $field = wp_parse_args($field, $this->fields['text']);
         break;
       case 'week':
-        $field['value'] = date('Y-\WW', strtotime($field['value']));
+        $field['value'] = !empty($field['value']) ? date('Y-\WW', strtotime($field['value'])) : '';
         $field = wp_parse_args($field, $this->fields['text']);
         break;
       case 'wp_editor':

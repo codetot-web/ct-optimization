@@ -339,7 +339,9 @@ class Codetot_Optimization_Process
     if (!empty($this->options['disable_inline_comment_style'])) {
       add_action('widgets_init', function () {
         global $wp_widget_factory;
-        remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
+        if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
+          remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
+        }
       });
     }
   }
@@ -385,7 +387,11 @@ class Codetot_Optimization_Process
     }
     $url_path = parse_url($url);
 
-    return $url_path['host'];
+    if (is_array($url_path) && isset($url_path['host'])) {
+      return $url_path['host'];
+    }
+
+    return '';
   }
 
   /**
