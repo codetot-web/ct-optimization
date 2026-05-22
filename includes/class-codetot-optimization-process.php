@@ -329,7 +329,7 @@ class Codetot_Optimization_Process
 
   public function check_manifest()
   {
-    if (!empty($this->options['disable_manifest'])) {
+    if (!empty($this->options['disable_wlw_manifest'])) {
       remove_action('wp_head', 'wlwmanifest_link');
     }
   }

@@ -3,8 +3,8 @@ Contributors: khoipro, codetot
 Donate link: https://codetot.com
 Tags: optimization, compress, settings, codetot
 Requires at least: 5.0
-Tested up to: 6.6
-Stable tag: 1.1.1
+Tested up to: 6.8
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,12 @@ Yes, if you are using our themes.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.2.0 =
+* PHP 8.2-8.4 compatibility: fix missing property declaration in Gravity Forms class
+* Fix manifest option key mismatch (disable_manifest → disable_wlw_manifest)
+* Bump minimum PHP requirement to 7.4
+* Tested up to WordPress 6.8
 
 = 1.1.1 =
 * Fix PHP 8.1+ deprecation warnings for null/false passed to strip_tags() and strtotime()
