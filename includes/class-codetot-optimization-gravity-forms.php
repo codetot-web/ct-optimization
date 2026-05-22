@@ -17,6 +17,13 @@ class Codetot_Optimization_Gravity_Forms
   private static $instance;
 
   /**
+   * Plugin options.
+   *
+   * @var array
+   */
+  private $options;
+
+  /**
    * Get singleton instance.
    *
    * @return Codetot_Optimization_Gravity_Forms
