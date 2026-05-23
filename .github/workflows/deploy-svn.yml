@@ -40,9 +40,8 @@ jobs:
           cd "$SVN_DIR"
 
           svn update --set-depth infinity trunk
-          svn update --set-depth immediates tags
 
-          if [ -d "tags/${VERSION}" ]; then
+          if svn ls "${SVN_URL}tags/${VERSION}" >/dev/null 2>&1; then
             echo "Version ${VERSION} already exists in SVN; skipping deploy."
             exit 0
           fi
@@ -59,10 +58,13 @@ jobs:
           svn add . --force > /dev/null
           svn status | grep '^\!' | sed 's/! *//' | xargs -r -I% svn rm % > /dev/null
 
-          echo "Creating tag ${VERSION}"
-          svn cp trunk "tags/${VERSION}"
-
           echo "Committing to SVN"
           svn commit -m "Update to version ${VERSION} from GitHub" \
+            --no-auth-cache --non-interactive \
+            --username "$SVN_USERNAME" --password "$SVN_PASSWORD"
+
+          echo "Creating tag ${VERSION}"
+          svn copy "${SVN_URL}trunk" "${SVN_URL}tags/${VERSION}" \
+            -m "Tag version ${VERSION}" \
             --no-auth-cache --non-interactive \
             --username "$SVN_USERNAME" --password "$SVN_PASSWORD"
