@@ -33,37 +33,24 @@ jobs:
           set -euo pipefail
 
           SVN_URL="https://plugins.svn.wordpress.org/${SLUG}/"
-          SVN_DIR="${HOME}/svn-${SLUG}"
-
-          echo "Checking out ${SVN_URL}"
-          svn checkout --depth immediates "$SVN_URL" "$SVN_DIR"
-          cd "$SVN_DIR"
-
-          svn update --set-depth infinity trunk
 
           if svn ls "${SVN_URL}tags/${VERSION}" >/dev/null 2>&1; then
             echo "Version ${VERSION} already exists in SVN; skipping deploy."
             exit 0
           fi
 
-          echo "Syncing repository contents to trunk"
+          TMP_DIR="$(mktemp -d)"
+          echo "Preparing clean release tree in ${TMP_DIR}"
           rsync -rc --delete --delete-excluded \
             --exclude '.git' \
             --exclude '.github' \
             --exclude '.gitignore' \
             --exclude '.editorconfig' \
             --exclude '.DS_Store' \
-            "$GITHUB_WORKSPACE/" trunk/
+            "$GITHUB_WORKSPACE/" "$TMP_DIR/"
 
-          svn add . --force > /dev/null
-
-          echo "Committing to SVN"
-          svn commit -m "Update to version ${VERSION} from GitHub" \
-            --no-auth-cache --non-interactive \
-            --username "$SVN_USERNAME" --password "$SVN_PASSWORD"
-
-          echo "Creating tag ${VERSION}"
-          svn copy "${SVN_URL}trunk" "${SVN_URL}tags/${VERSION}" \
-            -m "Tag version ${VERSION}" \
+          echo "Importing release to SVN tag ${VERSION}"
+          svn import "$TMP_DIR" "${SVN_URL}tags/${VERSION}" \
+            -m "Release version ${VERSION} from GitHub" \
             --no-auth-cache --non-interactive \
             --username "$SVN_USERNAME" --password "$SVN_PASSWORD"
