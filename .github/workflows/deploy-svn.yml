@@ -20,11 +20,49 @@ jobs:
           ref: ${{ github.event_name == 'release' && github.event.release.tag_name || github.ref_name }}
           fetch-depth: 0
 
-      - name: Deploy to WordPress.org
-        uses: 10up/action-wordpress-plugin-deploy@stable
+      - name: Install SVN
+        run: sudo apt-get update && sudo apt-get install -y subversion
+
+      - name: Deploy to WordPress.org SVN
         env:
           SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
           SLUG: ct-optimization
           VERSION: ${{ github.event_name == 'release' && github.event.release.tag_name || github.event.inputs.version }}
-          BUILD_DIR: .
+        run: |
+          set -euo pipefail
+
+          SVN_URL="https://plugins.svn.wordpress.org/${SLUG}/"
+          SVN_DIR="${HOME}/svn-${SLUG}"
+
+          echo "Checking out ${SVN_URL}"
+          svn checkout --depth immediates "$SVN_URL" "$SVN_DIR"
+          cd "$SVN_DIR"
+
+          svn update --set-depth infinity trunk
+          svn update --set-depth immediates tags
+
+          if [ -d "tags/${VERSION}" ]; then
+            echo "Version ${VERSION} already exists in SVN; skipping deploy."
+            exit 0
+          fi
+
+          echo "Syncing repository contents to trunk"
+          rsync -rc --delete --delete-excluded \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude '.gitignore' \
+            --exclude '.editorconfig' \
+            --exclude '.DS_Store' \
+            "$GITHUB_WORKSPACE/" trunk/
+
+          svn add . --force > /dev/null
+          svn status | grep '^\!' | sed 's/! *//' | xargs -r -I% svn rm % > /dev/null
+
+          echo "Creating tag ${VERSION}"
+          svn cp trunk "tags/${VERSION}"
+
+          echo "Committing to SVN"
+          svn commit -m "Update to version ${VERSION} from GitHub" \
+            --no-auth-cache --non-interactive \
+            --username "$SVN_USERNAME" --password "$SVN_PASSWORD"
