@@ -30,7 +30,13 @@ class Codetot_Optimization_Activator {
 	 * @since    1.0.0
 	 */
 	public static function activate() {
-
+    // Ensure default comment/ping statuses are set once on activation,
+    // not on every admin page load.
+    if ( ! get_option( 'ct_optimization_activation_flushed', false ) ) {
+      update_option( 'default_ping_status', 'closed' );
+      update_option( 'default_comment_status', 'closed' );
+      update_option( 'ct_optimization_activation_flushed', true );
+    }
 	}
 
 }

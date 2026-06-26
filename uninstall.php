@@ -29,3 +29,7 @@
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
+
+// Clean up plugin options.
+delete_option( 'ct-optimization' );
+delete_option( 'ct_optimization_activation_flushed' );
