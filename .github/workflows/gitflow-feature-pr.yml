@@ -1,15 +1,23 @@
-name: Create a new Pull Request (bugfix)
+name: "Auto PR: feature to develop"
 on:
   push:
     branches:
       - 'feature/**'
 jobs:
-  auto-pull-request-develop-feature:
-    name: feature => develop
+  auto-pr:
+    name: feature to develop
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
-      - name: pull-request-action
-        uses: vsoch/pull-request-action@1.0.12
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PULL_REQUEST_BRANCH: "develop"
+      - uses: actions/checkout@v4
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: develop
+          branch: ${{ github.ref_name }}
+          title: "feat: merge ${{ github.ref_name }} into develop"
+          body: "Automated PR to merge feature branch into develop."
+          delete-branch: false
