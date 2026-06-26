@@ -1,1 +1,17 @@
+# Composer dependencies
+/vendor/
+
+# Node.js dependencies
+/node_modules/
+
+# macOS metadata
+.DS_Store
+
+# PHP logs and debug output
+*.log
+
+# PHPUnit result cache
+.phpunit.result.cache
+
+# Language backup files
 languages/*.*~

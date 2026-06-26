@@ -2,9 +2,10 @@
 Contributors: khoipro, codetot
 Donate link: https://codetot.com
 Tags: optimization, compress, settings, codetot
-Requires at least: 5.0
+Requires at least: 6.0
 Tested up to: 6.8
-Stable tag: 1.2.0
+Stable tag: 1.3.0
+Requires PHP: 8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +77,13 @@ Yes, if you are using our themes.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.3.0 =
+* Official PHP 8.0-8.4 support, bumped Requires PHP to 8.0
+* Fix undefined variable warning in admin options page under PHP 8.0
+* Bump Requires at least to WordPress 6.0
+* Integrate standard WordPress.org SVN deploy workflow
+* Move WP.org assets to .wordpress-org/ directory
 
 = 1.2.0 =
 * PHP 8.2-8.4 compatibility: fix missing property declaration in Gravity Forms class
