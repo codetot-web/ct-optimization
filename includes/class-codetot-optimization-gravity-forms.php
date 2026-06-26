@@ -100,8 +100,8 @@ class Codetot_Optimization_Gravity_Forms
     if (
       is_admin()
       || (defined('DOING_AJAX') && DOING_AJAX)
-      || isset($_POST['gform_ajax'])
-      || isset($_GET['gf_page']) // Admin page (eg. form preview).
+      || isset( $_POST['gform_ajax'] )
+      || isset( $_GET['gf_page'] ) // Admin page (eg. form preview).
       || doing_action('wp_footer')
       || did_action('wp_footer')
     ) {

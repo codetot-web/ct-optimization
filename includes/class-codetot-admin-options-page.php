@@ -350,7 +350,7 @@ class Codetot_Optimization_Admin_Options_Page
     $this->options = get_option($page_key, array());
     ?>
     <div class="wrap">
-    <h1><?php echo $GLOBALS['title']; ?></h1><?php
+    <h1><?php echo esc_html( $GLOBALS['title'] ); ?></h1><?php
 
     if (!empty($page['sections'])) {
       ?>

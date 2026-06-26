@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.6.0 (2026-06-26)
+
+### Cleanup
+
+- Removed dead `admin/partials/display.php` file — confirmed unused (admin UI rendered by `Codetot_Optimization_Admin_Options_Page`)
+- Removed empty boilerplate files: `admin/js/codetot-optimization-admin.js` and `admin/css/codetot-optimization-admin.css`
+
+### Security
+
+- Added `esc_html()` to `$GLOBALS['title']` output in admin options page (prevents XSS)
+- Code style consistency for `$_GET`/`$_POST` access in Gravity Forms class
+
 ## 1.5.0 (2026-06-26)
 
 ### Added
