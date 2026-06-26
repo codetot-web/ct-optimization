@@ -4,7 +4,7 @@ Donate link: https://codetot.com
 Tags: optimization, compress, settings, codetot
 Requires at least: 6.0
 Tested up to: 6.8
-Stable tag: 1.3.0
+Stable tag: 1.7.0
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -77,6 +77,12 @@ Yes, if you are using our themes.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.7.0 =
+* **[New]** Modern React-based admin settings screen with sidebar navigation and toggle controls
+* **[New]** REST API endpoint `/codetot-optimization/v1/settings` for programmatic settings management
+* **[New]** Settings schema endpoint exposing field definitions for custom UI integration
+* **[Dev]** Built with `@wordpress/scripts` — standard WordPress React tooling
 
 = 1.3.0 =
 * Official PHP 8.0-8.4 support, bumped Requires PHP to 8.0

@@ -78,12 +78,82 @@ class Codetot_Optimization_Admin
       )
     );
 
+    // Keep legacy Options Page class for backward compat (the old PHP-rendered page).
     $this->option_page = new Codetot_Optimization_Admin_Options_Page($this->pages);
+
+    // Register the new React-powered admin page.
+    add_action('admin_menu', array($this, 'register_react_admin_page'), 5);
+
+    // Enqueue React app assets.
+    add_action('admin_enqueue_scripts', array($this, 'enqueue_react_app'));
 
     // Notice about PHP version.
     if (version_compare(PHP_VERSION, '7.0', '<')) {
       $this->option_page->submit_error(sprintf(__('%s: Please consider upgrade your PHP Version to 7.3.', 'codetot-optimization'), __('CT Optimization', 'codetot-optimization')));
     }
+  }
+
+  /**
+   * Register the React-powered admin page.
+   *
+   * @since 1.7.0
+   */
+  public function register_react_admin_page() {
+    add_menu_page(
+      esc_html__('CT Optimization', 'codetot-optimization'),
+      esc_html__('CT Optimization', 'codetot-optimization'),
+      'manage_options',
+      'ct-optimization-react',
+      array($this, 'render_react_page'),
+      'dashicons-performance',
+      80
+    );
+  }
+
+  /**
+   * Render the React app container.
+   *
+   * @since 1.7.0
+   */
+  public function render_react_page() {
+    echo '<div id="codetot-optimization-root" class="wrap"></div>';
+  }
+
+  /**
+   * Enqueue React app assets on the admin page.
+   *
+   * @since 1.7.0
+   * @param string $hook The current admin page hook.
+   */
+  public function enqueue_react_app( $hook ) {
+    if ( 'toplevel_page_ct-optimization-react' !== $hook ) {
+      return;
+    }
+
+    $build_dir = CODETOT_OPTIMIZATION_PATH . 'admin/build/';
+    $build_url = CODETOT_OPTIMIZATION_URL . 'admin/build/';
+
+    $asset_file = $build_dir . 'index.asset.php';
+    if ( ! file_exists( $asset_file ) ) {
+      return;
+    }
+
+    $asset = require $asset_file;
+
+    wp_enqueue_script(
+      'codetot-optimization-react',
+      $build_url . 'index.js',
+      $asset['dependencies'],
+      $asset['version'],
+      true
+    );
+
+    wp_enqueue_style(
+      'codetot-optimization-react',
+      $build_url . 'index.css',
+      array('wp-components'),
+      $asset['version']
+    );
   }
 
   /**

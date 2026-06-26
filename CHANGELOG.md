@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.7.0 (2026-06-26)
+
+### Added
+
+- **Modern React admin screen** — fully interactive settings page with dark sidebar navigation, grouped sections, toggle switches, and instant save feedback. Built with `@wordpress/scripts` and WordPress components.
+- **REST API endpoints**:
+  - `GET /codetot-optimization/v1/settings` — retrieve parsed plugin settings
+  - `POST /codetot-optimization/v1/settings` — update plugin settings
+  - `GET /codetot-optimization/v1/settings/schema` — field definitions for custom UI
+- **PHP REST handler** — new `Codetot_Optimization_REST` class registering routes on `rest_api_init`
+
+### Dev
+
+- `package.json` with `@wordpress/scripts` build system
+- Webpack outputs to `admin/build/` via `npm run build`
+- Backward compatible — legacy PHP settings page still accessible via Settings menu
+
 ## 1.3.0 (2026-06-26)
 
 ### Added

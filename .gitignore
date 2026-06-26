@@ -1,7 +1,5 @@
-# Composer dependencies
+# Dependencies
 /vendor/
-
-# Node.js dependencies
 /node_modules/
 
 # macOS metadata
