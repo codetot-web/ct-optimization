@@ -4,7 +4,7 @@ Donate link: https://codetot.com
 Tags: optimization, compress, settings, codetot
 Requires at least: 6.0
 Tested up to: 6.8
-Stable tag: 1.3.0
+Stable tag: 1.6.0
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -77,6 +77,12 @@ Yes, if you are using our themes.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.6.0 =
+* **[Cleanup]** Removed dead `admin/partials/display.php` file (not used anywhere)
+* **[Cleanup]** Removed empty boilerplate `admin/js/codetot-optimization-admin.js` and `admin/css/codetot-optimization-admin.css`
+* **[Security]** Added `esc_html()` to `$GLOBALS['title']` output in admin options page
+* **[Security]** Code style consistency for `$_GET`/`$_POST` access in Gravity Forms class
 
 = 1.3.0 =
 * Official PHP 8.0-8.4 support, bumped Requires PHP to 8.0
