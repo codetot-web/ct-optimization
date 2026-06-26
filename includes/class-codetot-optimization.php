@@ -43,6 +43,47 @@ class Codetot_Optimization {
   }
 
   /**
+   * Get parsed plugin options — called once per request, cached statically.
+   *
+   * Reads the serialized 'ct-optimization' option, converts yes/no to booleans,
+   * and returns a flat array. All sub-classes use this instead of calling
+   * get_option() independently.
+   *
+   * @since    1.4.0
+   * @return   array
+   */
+  public static function get_options() {
+    static $options = null;
+
+    if ( $options !== null ) {
+      return $options;
+    }
+
+    $raw = get_option( 'ct-optimization' );
+
+    if ( empty( $raw ) || ! is_array( $raw ) ) {
+      $options = array();
+      return $options;
+    }
+
+    $parsed = array();
+    foreach ( $raw as $key => $value ) {
+      $key = str_replace( '-', '_', $key );
+
+      if ( $value === 'yes' ) {
+        $parsed[ $key ] = true;
+      } elseif ( $value === 'no' ) {
+        $parsed[ $key ] = false;
+      } else {
+        $parsed[ $key ] = $value;
+      }
+    }
+
+    $options = $parsed;
+    return $options;
+  }
+
+  /**
    * @since    1.0.0
    * @access   private
    */

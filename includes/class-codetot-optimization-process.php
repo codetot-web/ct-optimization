@@ -50,23 +50,10 @@ class Codetot_Optimization_Process
 
   public function __construct()
   {
-    $options = get_option('ct-optimization');
+    $this->options = Codetot_Optimization::get_options();
 
-    if (empty($options)) {
+    if (empty($this->options)) {
       return;
-    }
-
-    foreach ($options as $key => $option) {
-      $key = str_replace('-', '_', $key);
-
-      if ($option === 'yes') {
-        // Convert yes/no to true/false
-        $this->options[$key] = true;
-      } elseif($option === 'no') {
-        $this->options[$key] = false;
-      } else {
-        $this->options[$key] = $option;
-      }
     }
 
     // Global Settings
@@ -94,7 +81,7 @@ class Codetot_Optimization_Process
   public function check_gutenberg()
   {
     if (!empty($this->options['disable_gutenberg_block_editor'])) {
-      add_action('use_block_editor_for_post', '__return_false');
+      add_filter('use_block_editor_for_post', '__return_false');
       add_action('wp_enqueue_scripts', array($this, 'disable_wp_block_assets'), 100);
 
       remove_action( 'try_gutenberg_panel', 'wp_try_gutenberg_panel' );
@@ -222,10 +209,6 @@ class Codetot_Optimization_Process
   public function check_xmlrpc()
   {
     if (!empty($this->options['disable_xmlrpc'])) {
-      if (is_admin()) {
-        update_option('default_ping_status', 'closed'); // Might do something else here to reduce our queries
-      }
-
       add_action('xmlrpc_enabled', '__return_false');
       add_action('pre_update_option_enable_xmlrpc', '__return_false');
       add_action('pre_option_enable_xmlrpc', '__return_zero');
@@ -258,11 +241,6 @@ class Codetot_Optimization_Process
   public function check_comments()
   {
     if (!empty($this->options['disable_comments'])) {
-      // by default, comments are closed.
-      if (is_admin()) {
-        update_option('default_comment_status', 'closed');
-      }
-
       // Closes plugins
       add_action('comments_open', '__return_false', 20, 2);
       add_action('pings_open', '__return_false', 20, 2);
