@@ -37,23 +37,10 @@ class Codetot_Optimization_Assets
 
   public function __construct()
   {
-    $options = get_option('ct-optimization');
+    $this->options = Codetot_Optimization::get_options();
 
-    if (empty($options)) {
+    if (empty($this->options)) {
       return;
-    }
-
-    foreach ($options as $key => $option) {
-      $key = str_replace('-', '_', $key);
-
-      if ($option === 'yes') {
-        // Convert yes/no to true/false
-        $this->options[$key] = true;
-      } elseif ($option === 'no') {
-        $this->options[$key] = false;
-      } else {
-        $this->options[$key] = $option;
-      }
     }
 
     add_filter('clean_url', array($this, 'add_async_forscript'), 11, 1);

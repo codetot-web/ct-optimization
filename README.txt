@@ -84,6 +84,23 @@ Yes, if you are using our themes.
 * **[Security]** Added `esc_html()` to `$GLOBALS['title']` output in admin options page
 * **[Security]** Code style consistency for `$_GET`/`$_POST` access in Gravity Forms class
 
+= 1.5.0 =
+* **[New]** Remove query strings (`?ver=`) from static assets for improved cache hit rate
+* **[New]** Disable self pingbacks to reduce server load
+* **[New]** Disable REST API for non-authenticated users (returns 401)
+* **[New]** Remove default dashboard widgets (Quick Draft, WP News, etc.)
+* **[New]** Disable attachment pages (301 redirect to parent post or home)
+* **[New]** Remove jQuery Migrate script from front-end
+* **[New]** Disable native WordPress XML sitemaps (WP 5.5+)
+* **[New]** Remove dashicons styles on front-end when not used by theme
+
+= 1.4.0 =
+* **[Fix]** `use_block_editor_for_post` filter was incorrectly registered as `add_action` → now uses proper `add_filter`
+* **[Fix]** Plugin deactivation never cleaned up options — `delete_option()` was wrapped in `add_action('init', ...)` that never runs during deactivation
+* **[Fix]** `update_option()` calls for default comment/ping statuses moved from per-request admin to activation hook (runs once)
+* **[Fix]** `uninstall.php` now cleans up plugin options from database
+* **[Perf]** Centralized option loading — `Codetot_Optimization::get_options()` with static cache; 1 DB call per request instead of 3
+
 = 1.3.0 =
 * Official PHP 8.0-8.4 support, bumped Requires PHP to 8.0
 * Fix undefined variable warning in admin options page under PHP 8.0
