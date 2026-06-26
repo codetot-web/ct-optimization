@@ -4,7 +4,7 @@ Donate link: https://codetot.com
 Tags: optimization, compress, settings, codetot
 Requires at least: 6.0
 Tested up to: 6.8
-Stable tag: 1.4.0
+Stable tag: 1.5.0
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -78,13 +78,22 @@ Yes, if you are using our themes.
 
 == Changelog ==
 
+= 1.5.0 =
+* **[New]** Remove query strings (`?ver=`) from static assets for improved cache hit rate
+* **[New]** Disable self pingbacks to reduce server load
+* **[New]** Disable REST API for non-authenticated users (returns 401)
+* **[New]** Remove default dashboard widgets (Quick Draft, WP News, etc.)
+* **[New]** Disable attachment pages (301 redirect to parent post or home)
+* **[New]** Remove jQuery Migrate script from front-end
+* **[New]** Disable native WordPress XML sitemaps (WP 5.5+)
+* **[New]** Remove dashicons styles on front-end when not used by theme
+
 = 1.4.0 =
-* **[Fix]** `use_block_editor_for_post` filter was incorrectly registered as `add_action` → now uses proper `add_filter` (B1)
-* **[Fix]** Plugin deactivation never cleaned up options — `delete_option()` was wrapped in an `add_action('init', ...)` that never runs during deactivation (B2)
-* **[Fix]** `update_option('default_ping_status')` and `update_option('default_comment_status')` ran on **every admin page load** → moved to activation hook, runs once (B3)
-* **[Fix]** `uninstall.php` now cleans up `ct-optimization` and `ct_optimization_activation_flushed` options (B4)
-* **[Perf]** Centralized option loading — `Codetot_Optimization::get_options()` parses options once per request with static cache; Process, Gravity Forms, and Assets classes share the same call instead of each calling `get_option()` independently (P1)
-* **[Perf]** Reduced DB queries: `get_option('ct-optimization')` now called 1× per request instead of 3×+
+* **[Fix]** `use_block_editor_for_post` filter was incorrectly registered as `add_action` → now uses proper `add_filter`
+* **[Fix]** Plugin deactivation never cleaned up options — `delete_option()` was wrapped in `add_action('init', ...)` that never runs during deactivation
+* **[Fix]** `update_option()` calls for default comment/ping statuses moved from per-request admin to activation hook (runs once)
+* **[Fix]** `uninstall.php` now cleans up plugin options from database
+* **[Perf]** Centralized option loading — `Codetot_Optimization::get_options()` with static cache; 1 DB call per request instead of 3
 
 = 1.3.0 =
 * Official PHP 8.0-8.4 support, bumped Requires PHP to 8.0
