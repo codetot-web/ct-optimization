@@ -384,8 +384,8 @@ class Codetot_Optimization_Admin_Options_Page
     }
 
     // Additional attributes
+    $attributes = array();
     if (!empty($field['attributes'])) {
-      $attributes = array();
       foreach ($field['attributes'] as $attribute => $value) {
         if (!empty($value)) {
           $attributes[] = "{$attribute}='{$value}'";
