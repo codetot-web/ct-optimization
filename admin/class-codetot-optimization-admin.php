@@ -104,7 +104,15 @@ class Codetot_Optimization_Admin
       'disable_feed' => __('Feed', 'codetot-optimization'),
       'disable_shortlink' => __('Shortlink', 'codetot-optimization'),
       'disable_wlw_manifest' => __('WLW Manifest', 'codetot-optimization'),
-      'disable_inline_comment_style' => __('Inline Comment Style', 'codetot-optimization')
+      'disable_inline_comment_style' => __('Inline Comment Style', 'codetot-optimization'),
+      'disable_query_strings' => __('Query Strings from Assets', 'codetot-optimization'),
+      'disable_self_pingbacks' => __('Self Pingbacks', 'codetot-optimization'),
+      'disable_rest_api' => __('REST API (non-auth)', 'codetot-optimization'),
+      'remove_dashboard_widgets' => __('Dashboard Widgets', 'codetot-optimization'),
+      'disable_attachment_pages' => __('Attachment Pages', 'codetot-optimization'),
+      'remove_jquery_migrate' => __('jQuery Migrate', 'codetot-optimization'),
+      'disable_xml_sitemaps' => __('XML Sitemaps', 'codetot-optimization'),
+      'remove_frontend_dashicons' => __('Front-end Dashicons', 'codetot-optimization'),
     ];
   }
 

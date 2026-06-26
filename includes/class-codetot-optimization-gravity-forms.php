@@ -38,23 +38,10 @@ class Codetot_Optimization_Gravity_Forms
 
   public function __construct()
   {
-    $options = get_option('ct-optimization');
+    $this->options = Codetot_Optimization::get_options();
 
-    if (empty($options)) {
+    if (empty($this->options)) {
       return;
-    }
-
-    foreach ( $options as $key => $option ) {
-      $key = str_replace('-', '_', $key);
-
-      if ( $option === 'yes' ) {
-        // Convert yes/no to true/false
-        $this->options[$key] = true;
-      } elseif( $option === 'no' ) {
-        $this->options[$key] = false;
-      } else {
-        $this->options[$key] = $option;
-      }
     }
 
     if ( ! empty( $this->options['disable_gravity_forms_default_styles'] ) ) {
@@ -113,8 +100,8 @@ class Codetot_Optimization_Gravity_Forms
     if (
       is_admin()
       || (defined('DOING_AJAX') && DOING_AJAX)
-      || isset($_POST['gform_ajax'])
-      || isset($_GET['gf_page']) // Admin page (eg. form preview).
+      || isset( $_POST['gform_ajax'] )
+      || isset( $_GET['gf_page'] ) // Admin page (eg. form preview).
       || doing_action('wp_footer')
       || did_action('wp_footer')
     ) {

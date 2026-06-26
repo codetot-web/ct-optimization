@@ -5,7 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 1.3.0 (2026-06-26)
+## 1.6.0 (2026-06-26)
+
+### Cleanup
+
+- Removed dead `admin/partials/display.php` file — confirmed unused (admin UI rendered by `Codetot_Optimization_Admin_Options_Page`)
+- Removed empty boilerplate files: `admin/js/codetot-optimization-admin.js` and `admin/css/codetot-optimization-admin.css`
+
+### Security
+
+- Added `esc_html()` to `$GLOBALS['title']` output in admin options page (prevents XSS)
+- Code style consistency for `$_GET`/`$_POST` access in Gravity Forms class
+
+## 1.5.0 (2026-06-26)
+
+### Added
+
+- **Remove query strings** (`?ver=`) from enqueued scripts and styles — improves cache hit rate on CDN and proxy caches
+- **Disable self pingbacks** — prevents WordPress from sending pingbacks to your own domain
+- **Disable REST API for non-authenticated users** — returns 401 for unauthenticated REST requests; keeps public endpoints intact
+- **Remove default dashboard widgets** — cleans up Quick Draft, WP News, Site Health, At a Glance, Activity, and Welcome panel
+- **Disable attachment pages** — 301 redirects attachment pages to parent post (or homepage if no parent)
+- **Remove jQuery Migrate** — removes the jquery-migrate dependency from jquery on front-end
+- **Disable native XML sitemaps** — disables WordPress 5.5+ built-in sitemaps (let SEO plugins handle it)
+- **Remove front-end dashicons** — dequeues dashicons stylesheet on front-end when not used by theme
+
+## 1.4.0 (2026-06-26)
 
 ### Added
 
