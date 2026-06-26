@@ -50,23 +50,10 @@ class Codetot_Optimization_Process
 
   public function __construct()
   {
-    $options = get_option('ct-optimization');
+    $this->options = Codetot_Optimization::get_options();
 
-    if (empty($options)) {
+    if (empty($this->options)) {
       return;
-    }
-
-    foreach ($options as $key => $option) {
-      $key = str_replace('-', '_', $key);
-
-      if ($option === 'yes') {
-        // Convert yes/no to true/false
-        $this->options[$key] = true;
-      } elseif($option === 'no') {
-        $this->options[$key] = false;
-      } else {
-        $this->options[$key] = $option;
-      }
     }
 
     // Global Settings
@@ -89,12 +76,23 @@ class Codetot_Optimization_Process
 
     // Advanced Settings
     add_action('init', array($this, 'check_cdn'));
+
+    // New Optimization Features
+    add_filter('script_loader_src', array($this, 'remove_query_strings'), 15, 1);
+    add_filter('style_loader_src', array($this, 'remove_query_strings'), 15, 1);
+    add_action('init', array($this, 'check_self_pingbacks'));
+    add_action('init', array($this, 'check_rest_api'));
+    add_action('init', array($this, 'check_dashboard_widgets'));
+    add_action('init', array($this, 'check_attachment_pages'));
+    add_action('init', array($this, 'check_jquery_migrate'));
+    add_action('init', array($this, 'check_xml_sitemaps'));
+    add_action('wp_enqueue_scripts', array($this, 'check_frontend_dashicons'), 100);
   }
 
   public function check_gutenberg()
   {
     if (!empty($this->options['disable_gutenberg_block_editor'])) {
-      add_action('use_block_editor_for_post', '__return_false');
+      add_filter('use_block_editor_for_post', '__return_false');
       add_action('wp_enqueue_scripts', array($this, 'disable_wp_block_assets'), 100);
 
       remove_action( 'try_gutenberg_panel', 'wp_try_gutenberg_panel' );
@@ -222,10 +220,6 @@ class Codetot_Optimization_Process
   public function check_xmlrpc()
   {
     if (!empty($this->options['disable_xmlrpc'])) {
-      if (is_admin()) {
-        update_option('default_ping_status', 'closed'); // Might do something else here to reduce our queries
-      }
-
       add_action('xmlrpc_enabled', '__return_false');
       add_action('pre_update_option_enable_xmlrpc', '__return_false');
       add_action('pre_option_enable_xmlrpc', '__return_zero');
@@ -258,11 +252,6 @@ class Codetot_Optimization_Process
   public function check_comments()
   {
     if (!empty($this->options['disable_comments'])) {
-      // by default, comments are closed.
-      if (is_admin()) {
-        update_option('default_comment_status', 'closed');
-      }
-
       // Closes plugins
       add_action('comments_open', '__return_false', 20, 2);
       add_action('pings_open', '__return_false', 20, 2);
@@ -450,5 +439,156 @@ class Codetot_Optimization_Process
       $source['url'] = str_replace($this->site_domain . '/wp-content/uploads', $this->cdn_domain . '/wp-content/uploads', $source['url']);
     }
     return $sources;
+  }
+
+  // ==========================================================================
+  // Phase 2: New Optimization Features
+  // ==========================================================================
+
+  /**
+   * Remove query strings (?ver=) from enqueued scripts and styles.
+   *
+   * @since 1.5.0
+   * @param string $src
+   * @return string
+   */
+  public function remove_query_strings($src)
+  {
+    if (!empty($this->options['disable_query_strings'])) {
+      $src = remove_query_arg('ver', $src);
+    }
+    return $src;
+  }
+
+  /**
+   * Disable self pingbacks.
+   *
+   * @since 1.5.0
+   */
+  public function check_self_pingbacks()
+  {
+    if (!empty($this->options['disable_self_pingbacks'])) {
+      add_action('pre_ping', function (&$links) {
+        $home = get_option('home');
+        foreach ($links as $l => $link) {
+          if (strpos($link, $home) === 0) {
+            unset($links[$l]);
+          }
+        }
+      });
+    }
+  }
+
+  /**
+   * Disable REST API for non-authenticated users.
+   *
+   * @since 1.5.0
+   */
+  public function check_rest_api()
+  {
+    if (!empty($this->options['disable_rest_api'])) {
+      add_filter('rest_authentication_errors', function ($result) {
+        if (!empty($result)) {
+          return $result;
+        }
+        if (!is_user_logged_in()) {
+          return new WP_Error(
+            'rest_not_logged_in',
+            __('You are not currently logged in.', 'codetot-optimization'),
+            array('status' => 401)
+          );
+        }
+        return $result;
+      });
+    }
+  }
+
+  /**
+   * Remove default dashboard widgets.
+   *
+   * @since 1.5.0
+   */
+  public function check_dashboard_widgets()
+  {
+    if (!empty($this->options['remove_dashboard_widgets'])) {
+      add_action('wp_dashboard_setup', function () {
+        remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
+        remove_meta_box('dashboard_primary', 'dashboard', 'side');
+        remove_meta_box('dashboard_secondary', 'dashboard', 'side');
+        remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
+        remove_meta_box('dashboard_right_now', 'dashboard', 'normal');
+        remove_meta_box('dashboard_activity', 'dashboard', 'normal');
+        remove_meta_box('dashboard_incoming_links', 'dashboard', 'normal');
+        remove_meta_box('dashboard_plugins', 'dashboard', 'normal');
+        remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
+        remove_meta_box('dashboard_recent_drafts', 'dashboard', 'normal');
+        remove_action('welcome_panel', 'wp_welcome_panel');
+      });
+    }
+  }
+
+  /**
+   * Disable attachment pages — redirect to parent or home.
+   *
+   * @since 1.5.0
+   */
+  public function check_attachment_pages()
+  {
+    if (!empty($this->options['disable_attachment_pages'])) {
+      add_action('template_redirect', function () {
+        if (is_attachment()) {
+          global $post;
+          if ($post && $post->post_parent) {
+            wp_redirect(get_permalink($post->post_parent), 301);
+          } else {
+            wp_redirect(home_url(), 301);
+          }
+          exit;
+        }
+      });
+    }
+  }
+
+  /**
+   * Remove jQuery Migrate script.
+   *
+   * @since 1.5.0
+   */
+  public function check_jquery_migrate()
+  {
+    if (!empty($this->options['remove_jquery_migrate'])) {
+      add_action('wp_default_scripts', function ($scripts) {
+        if (!empty($scripts->registered['jquery'])) {
+          $jquery_deps = $scripts->registered['jquery']->deps;
+          $scripts->registered['jquery']->deps = array_diff($jquery_deps, array('jquery-migrate'));
+        }
+      });
+    }
+  }
+
+  /**
+   * Disable native WordPress XML sitemaps (WP 5.5+).
+   *
+   * @since 1.5.0
+   */
+  public function check_xml_sitemaps()
+  {
+    if (!empty($this->options['disable_xml_sitemaps'])) {
+      add_filter('wp_sitemaps_enabled', '__return_false');
+    }
+  }
+
+  /**
+   * Remove dashicons styles on front-end when not used by theme.
+   *
+   * @since 1.5.0
+   */
+  public function check_frontend_dashicons()
+  {
+    if (!empty($this->options['remove_frontend_dashicons'])) {
+      if (!is_admin() && !is_customize_preview()) {
+        wp_dequeue_style('dashicons');
+      }
+    }
   }
 }
