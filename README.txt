@@ -80,7 +80,7 @@ Yes, if you are using our themes.
 
 = 1.6.1 =
 * **[Fix]** WP 6.7+ deprecation: translation domain loaded too early — moved `load_plugin_textdomain()` from `plugins_loaded` hook to direct call in constructor
-* **[Fix]** Tested on PHP 8.1, 8.2, 8.3 across educap.com.vn, luatthienthanh.vn, banhbaominh — no errors
+* **[Fix]** Tested on PHP 8.1, 8.2, 8.3 across multiple production sites — no errors
 * **[Dev]** Verified compatibility with WordPress 6.8
 
 = 1.6.0 =

@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - **WP 6.7+ translation timing** — moved `load_plugin_textdomain()` from `plugins_loaded` hook to direct call in constructor, fixing `_load_textdomain_just_in_time` deprecation notice
-- **Production tested** — deployed and verified on PHP 8.1, 8.2, 8.3 across 4 live sites: educap.com.vn, luatthienthanh.vn, banhbaominh, miac
+- **Production tested** — deployed and verified on PHP 8.1, 8.2, 8.3 across multiple production sites without errors
 
 ### Changed
 
