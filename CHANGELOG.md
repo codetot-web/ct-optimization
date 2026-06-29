@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Tested up to WordPress 6.8
+- Tested up to WordPress 7.0
 
 ## 1.6.0 (2026-06-26)
 

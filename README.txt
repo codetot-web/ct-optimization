@@ -3,7 +3,7 @@ Contributors: khoipro, codetot
 Donate link: https://codetot.com
 Tags: optimization, compress, settings, codetot
 Requires at least: 6.0
-Tested up to: 6.8
+Tested up to: 7.0
 Stable tag: 1.6.1
 Requires PHP: 8.0
 License: GPLv2 or later
@@ -81,7 +81,7 @@ Yes, if you are using our themes.
 = 1.6.1 =
 * **[Fix]** WP 6.7+ deprecation: translation domain loaded too early — moved `load_plugin_textdomain()` from `plugins_loaded` hook to direct call in constructor
 * **[Fix]** Tested on PHP 8.1, 8.2, 8.3 across multiple production sites — no errors
-* **[Dev]** Verified compatibility with WordPress 6.8
+* **[Dev]** Verified compatibility with WordPress 7.0
 
 = 1.6.0 =
 * **[Cleanup]** Removed dead `admin/partials/display.php` file (not used anywhere)
