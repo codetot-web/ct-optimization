@@ -34,7 +34,7 @@ class Codetot_Optimization {
 
     $this->load_dependencies();
 
-    add_action('plugins_loaded', array($this, 'load_translation'));
+    $this->load_translation();
 
     Codetot_Optimization_Admin::instance();
 

@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.6.1 (2026-06-29)
+
+### Fixed
+
+- **WP 6.7+ translation timing** — moved `load_plugin_textdomain()` from `plugins_loaded` hook to direct call in constructor, fixing `_load_textdomain_just_in_time` deprecation notice
+- **Production tested** — deployed and verified on PHP 8.1, 8.2, 8.3 across 4 live sites: educap.com.vn, luatthienthanh.vn, banhbaominh, miac
+
+### Changed
+
+- Tested up to WordPress 6.8
+
 ## 1.6.0 (2026-06-26)
 
 ### Cleanup
