@@ -1,8 +1,9 @@
-# Composer dependencies
+# Dependencies
 /vendor/
-
-# Node.js dependencies
 /node_modules/
+
+# Build artifacts (committed for distribution)
+# /admin/build/
 
 # macOS metadata
 .DS_Store
